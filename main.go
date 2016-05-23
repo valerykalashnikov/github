@@ -42,7 +42,7 @@ func main() {
     case "issues":
       issues, _, err := client.Issues.ListByRepo("user_name", "repo_name", nil)
       for _, i := range issues {
-        fmt.Println(i)
+        fmt.Printf("#%d: %s\n", *i.Number, *i.Title)
       }
       if err != nil {
         fmt.Println(err)
